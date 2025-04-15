@@ -18,6 +18,7 @@ The site highlights the restaurant's ambiance and menu, emphasizing authentic In
 1.  Clone the repository:
     `https://github.com/Prateek-u-bot/Spice_haven`  
 2.  Open `index.html` in a browser.
+3.  Preview Link : `https://spice-haven-rouge.vercel.app/`
 
 ## Usage Details
 
