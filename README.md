@@ -16,7 +16,7 @@ The site highlights the restaurant's ambiance and menu, emphasizing authentic In
 ## Setup Instructions
 
 1.  Clone the repository:
-    `git clone [repository URL]`
+    `git clone https://github.com/your-username/spice-haven.git`  **(Replace with your actual repository URL)**
 2.  Open `index.html` in a browser.
 
 ## Usage Details
@@ -34,7 +34,7 @@ The site highlights the restaurant's ambiance and menu, emphasizing authentic In
 
 ## Team Members
 
-* **Prateek Chaubey:** Project Lead & Front-End Developer - Responsible for overall project management and front-end development using HTML, Tailwind CSS, and JavaScript.
-* **Parag Dixit:** UI/UX Designer - Responsible for designing the user interface and user experience, ensuring a visually appealing and intuitive website.
-* **Bhoomika Jain:** Content Creator - Responsible for creating and managing website content, including dish descriptions, restaurant information, and blog posts.
-* **Jahnvi Nayak:** Front-End Developer - Assisted in the front-end development, focusing on responsive design and interactive elements.
+* **John Doe:** Project Lead & Front-End Developer - Responsible for overall project management and front-end development using HTML, Tailwind CSS, and JavaScript.
+* **Jane Smith:** UI/UX Designer - Responsible for designing the user interface and user experience, ensuring a visually appealing and intuitive website.
+* **Alice Johnson:** Content Creator - Responsible for creating and managing website content, including dish descriptions, restaurant information, and blog posts.
+* **Bob Williams:** Front-End Developer - Assisted in the front-end development, focusing on responsive design and interactive elements.
