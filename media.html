@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Spice Haven Indian Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'spice-red': '#D94E47',
+                        'spice-orange': '#FF7F3F',
+                        'spice-yellow': '#FFC54D',
+                        'curry-brown': '#8B4513',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-playfair font-bold text-spice-red">Spice Haven</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-spice-red transition-colors">Home</a>
+                    <a href="menu.html" class="text-gray-800 hover:text-spice-red transition-colors">Menu</a>
+                    <a href="booking.html" class="text-gray-800 hover:text-spice-red transition-colors">Book Table</a>
+                    <a href="order.html" class="text-gray-800 hover:text-spice-red transition-colors">Order Online</a>
+                    <a href="media.html" class="text-spice-red">Gallery</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-spice-red transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-800">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Featured Video Section -->
+    <div class="pt-24 relative">
+        <div class="relative h-[70vh] overflow-hidden">
+            <video class="w-full h-full object-cover" autoplay loop muted playsinline id="featuredVideo">
+                <source src="https://videos.pexels.com/video-files/3214486/3214486-sd_640_360_25fps.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                <div class="text-center text-white">
+                    <h1 class="text-4xl md:text-6xl font-playfair font-bold mb-4">The Art of Indian Cuisine</h1>
+                    <p class="text-xl mb-8">Experience the magic of traditional cooking</p>
+                    <div class="video-controls flex justify-center space-x-4">
+                        <button id="playPause" class="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-colors">
+                            <i class="fas fa-pause text-2xl"></i>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Cooking Process Showcase -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-12">Cooking Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tandoor Cooking -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <video class="w-full h-64 object-cover" autoplay loop muted playsinline>
+                        <source src="https://videos.pexels.com/video-files/5614345/5614345-hd_1920_1080_25fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+                        <h3 class="text-xl font-playfair font-bold text-white mb-2">Tandoor Magic</h3>
+                        <p class="text-white/80">Traditional clay oven cooking at its finest</p>
+                    </div>
+                </div>
+
+                <!-- Spice Grinding -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <video class="w-full h-64 object-cover" autoplay loop muted playsinline>
+                        <source src="https://videos.pexels.com/video-files/5480220/5480220-uhd_2560_1440_25fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+                        <h3 class="text-xl font-playfair font-bold text-white mb-2">Spice Preparation</h3>
+                        <p class="text-white/80">Fresh ground spices for authentic flavors</p>
+                    </div>
+                </div>
+
+                <!-- Curry Making -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <video class="w-full h-64 object-cover" autoplay loop muted playsinline>
+                        <source src="https://videos.pexels.com/video-files/30044482/12888349_1080_1920_30fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+                        <h3 class="text-xl font-playfair font-bold text-white mb-2">Curry Creation</h3>
+                        <p class="text-white/80">Slow-cooked curries with rich gravies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Spice Journey -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-12">BestSeller</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Spice Cards with Enhanced Image Design -->
+            <div class="spice-card bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="relative w-28 h-28 mx-auto mb-4">
+                    <div class="absolute inset-0 rounded-full ring-4 ring-yellow-300 shadow-lg animate-pulse"></div>
+                    <img src="https://myfoodstory.com/wp-content/uploads/2021/07/Paneer-Butter-Masala-Resized-2.jpg?fit=1200"
+                         alt="Turmeric"
+                         class="relative rounded-full w-full h-full object-cover border-4 border-white">
+                </div>
+                <h3 class="text-lg font-bold text-center mb-2">Butter Paneer Masala</h3>
+                
+            </div>
+
+            <div class="spice-card bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="relative w-28 h-28 mx-auto mb-4">
+                    <div class="absolute inset-0 rounded-full ring-4 ring-green-300 shadow-lg animate-pulse delay-100"></div>
+                    <img src="https://yellowchilis.com/wp-content/uploads/2021/09/white-sauce-pasta-recipe-penne-pasta.jpg"
+                         alt="Cardamom"
+                         class="relative rounded-full w-full h-full object-cover border-4 border-white">
+                </div>
+                <h3 class="text-lg font-bold text-center mb-2">White Sauce Pasta</h3>
+                
+            </div>
+
+            <div class="spice-card bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="relative w-28 h-28 mx-auto mb-4">
+                    <div class="absolute inset-0 rounded-full ring-4 ring-orange-300 shadow-lg animate-pulse delay-200"></div>
+                    <img src="https://www.alcotraz.co.uk/wp-content/uploads/2024/09/row-of-cocktails.jpg"
+                         alt="Cumin"
+                         class="relative rounded-full w-full h-full object-cover border-4 border-white">
+                </div>
+                <h3 class="text-lg font-bold text-center mb-2">Mocktails</h3>
+                
+            </div>
+
+            <div class="spice-card bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="relative w-28 h-28 mx-auto mb-4">
+                    <div class="absolute inset-0 rounded-full ring-4 ring-red-300 shadow-lg animate-pulse delay-300"></div>
+                    <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/12/Web-Air-Fryer-Chips-305f379.jpg"
+                         alt="Cinnamon"
+                         class="relative rounded-full w-full h-full object-cover border-4 border-white">
+                </div>
+                <h3 class="text-lg font-bold text-center mb-2">French Fries</h3>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Regional Cuisine Map -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-12">Regional Specialties</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+              <!-- North Indian -->
+              <div class="cursor-pointer bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition" data-cuisine="North Indian">
+                <h3 class="text-xl font-semibold mb-2">North Indian</h3>
+                <p class="text-gray-600">Rich gravies, butter naan, and tandoori delights</p>
+              </div>
+      
+              <!-- South Indian -->
+              <div class="cursor-pointer bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition" data-cuisine="South Indian">
+                <h3 class="text-xl font-semibold mb-2">South Indian</h3>
+                <p class="text-gray-600">Dosa, Idli, Sambar, and Coconut Chutney</p>
+              </div>
+      
+              <!-- East Indian -->
+              <div class="cursor-pointer bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition" data-cuisine="East Indian">
+                <h3 class="text-xl font-semibold mb-2">East Indian</h3>
+                <p class="text-gray-600">Delicacies like Macher Jhol and Rasgulla</p>
+              </div>
+      
+              <!-- West Indian -->
+              <div class="cursor-pointer bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition" data-cuisine="West Indian">
+                <h3 class="text-xl font-semibold mb-2">West Indian</h3>
+                <p class="text-gray-600">Flavors of Gujarat, Maharashtra & Goa</p>
+              </div>
+            </div>
+      
+            <!-- India Map -->
+            <div class="relative">
+              <img src="https://t4.ftcdn.net/jpg/02/42/39/25/360_F_242392561_EFnxkFpe0Bwi3v01rcDt2mzEf9KKNCXS.jpg"
+                   alt="Map of India" 
+                   class="rounded-lg shadow-xl">
+              <div class="absolute -bottom-9 -right-6 bg-spice-red text-white p-4 rounded-lg shadow-lg">
+                <p class="font-bold">29 States</p>
+                <p class="text-sm">Countless Flavors</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">Spice Haven</h3>
+                    <p class="text-gray-400">Authentic Indian Cuisine</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="booking.html" class="text-gray-400 hover:text-white transition-colors">Reservations</a></li>
+                        <li><a href="order.html" class="text-gray-400 hover:text-white transition-colors">Order Online</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>123 Spice Street</li>
+                        <li><i class="fas fa-phone mr-2"></i>(555) 123-4567</li>
+                        <li><i class="fas fa-envelope mr-2"></i>info@spicehaven.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Spice Haven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('featuredVideo');
+            const playPauseBtn = document.getElementById('playPause');
+            const muteUnmuteBtn = document.getElementById('muteUnmute');
+
+            // Play/Pause
+            playPauseBtn.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play();
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause text-2xl"></i>';
+                } else {
+                    video.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play text-2xl"></i>';
+                }
+            });
+
+            // Video Error Handling
+            video.addEventListener('error', function() {
+                video.style.display = 'none';
+                video.parentElement.classList.add('video-fallback');
+            });
+        });
+    </script>
+    <!-- Modal -->
+<div id="cuisineModal" class="fixed inset-0 hidden bg-black bg-opacity-50 z-50 items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-xl mx-auto relative">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+      <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
+      <p id="modalContent" class="text-gray-700"></p>
+    </div>
+  </div>
+  <script>
+    const modal = document.getElementById("cuisineModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalContent = document.getElementById("modalContent");
+  
+    const cuisineDetails = {
+      "North Indian": "Hearty gravies like butter chicken, paneer tikka, and roti. Rich in ghee, cream, and bold spices.",
+      "South Indian": "Dosa, idli, sambar, and coconut chutney. Tangy, spicy, and rice-based with curry leaves.",
+      "East Indian": "Delicate Bengali sweets, mustard-based curries, fish preparations, and Panch Phoron.",
+      "West Indian": "Street food stars like pav bhaji, spicy Gujarati dishes, and Goan curries using kokum.",
+      };
+  
+    document.querySelectorAll("[data-cuisine]").forEach(card => {
+      card.addEventListener("click", () => {
+        const cuisine = card.getAttribute("data-cuisine");
+        modalTitle.innerText = cuisine;
+        modalContent.innerText = cuisineDetails[cuisine] || "More details coming soon!";
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      });
+    });
+  
+    function closeModal() {
+      modal.classList.remove("flex");
+      modal.classList.add("hidden");
+    }
+  </script>
+  
+</body>
+</html>

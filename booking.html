@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Table - Spice Haven Indian Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'spice-red': '#D94E47',
+                        'spice-orange': '#FF7F3F',
+                        'spice-yellow': '#FFC54D',
+                        'curry-brown': '#8B4513',
+                    },
+                    keyframes: {
+                        fadeSlideIn: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        popIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        }
+                    },
+                    animation: {
+                        fadeSlideIn: 'fadeSlideIn 0.8s ease-out forwards',
+                        popIn: 'popIn 0.4s ease-out forwards',
+                        pulseBtn: 'pulse 2s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-playfair font-bold text-spice-red">Spice Haven</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-spice-red transition-colors">Home</a>
+                    <a href="menu.html" class="text-gray-800 hover:text-spice-red transition-colors">Menu</a>
+                    <a href="booking.html" class="text-spice-red">Book Table</a>
+                    <a href="order.html" class="text-gray-800 hover:text-spice-red transition-colors">Order Online</a>
+                    <a href="media.html" class="text-gray-800 hover:text-spice-red transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-spice-red transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-800">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Header -->
+    <div class="pt-24 pb-12 bg-curry-brown text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-playfair font-bold mb-4 animate-fadeSlideIn">Reserve Your Table</h1>
+            <p class="text-lg text-spice-yellow animate-fadeSlideIn">Experience the finest Indian dining</p>
+        </div>
+    </div>
+
+    <!-- Booking Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fadeSlideIn">
+                    <!-- Booking Form -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <form id="bookingForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-spice-red/20 focus:border-spice-red"
+                                    placeholder="Enter your full name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-spice-red/20 focus:border-spice-red"
+                                    placeholder="Enter your email">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-spice-red/20 focus:border-spice-red"
+                                    placeholder="Enter your phone number">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="date" class="block text-gray-700 font-medium mb-2">Date</label>
+                                    <input type="date" id="date" name="date" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-spice-red/20 focus:border-spice-red">
+                                </div>
+                                <div>
+                                    <label for="time" class="block text-gray-700 font-medium mb-2">Time</label>
+                                    <select id="time" name="time" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-spice-red/20 focus:border-spice-red">
+                                        <option value="">Select time</option>
+                                        <option value="11:30">11:30 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="12:30">12:30 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="13:30">1:30 PM</option>
+                                        <option value="18:00">6:00 PM</option>
+                                        <option value="18:30">6:30 PM</option>
+                                        <option value="19:00">7:00 PM</option>
+                                        <option value="19:30">7:30 PM</option>
+                                        <option value="20:00">8:00 PM</option>
+                                        <option value="20:30">8:30 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="guests" class="block text-gray-700 font-medium mb-2">Number of Guests</label>
+                                <select id="guests" name="guests" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-spice-red/20 focus:border-spice-red">
+                                    <option value="">Select number of guests</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7">7 People</option>
+                                    <option value="8">8 People</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="occasion" class="block text-gray-700 font-medium mb-2">Special Occasion</label>
+                                <select id="occasion" name="occasion"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-spice-red/20 focus:border-spice-red">
+                                    <option value="">Select occasion (optional)</option>
+                                    <option value="birthday">Birthday</option>
+                                    <option value="anniversary">Anniversary</option>
+                                    <option value="business">Business Dinner</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="requests" class="block text-gray-700 font-medium mb-2">Special Requests</label>
+                                <textarea id="requests" name="requests"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-spice-red/20 focus:border-spice-red h-24"
+                                    placeholder="Any special requests or dietary requirements?"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-spice-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors hover:animate-pulseBtn">
+                                Book Now
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Booking Information -->
+                    <div class="space-y-8">
+                        <div class="bg-white p-8 rounded-lg shadow-lg animate-fadeSlideIn">
+                            <h3 class="text-xl font-playfair font-bold mb-4">Opening Hours</h3>
+                            <ul class="space-y-2">
+                                <li class="flex justify-between">
+                                    <span class="text-gray-600">Monday - Friday</span>
+                                    <span class="font-medium">09:00 AM - 11:00 PM</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-gray-600">Saturday - Sunday</span>
+                                    <span class="font-medium">11:00 AM - 12:00 PM</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-lg shadow-lg animate-fadeSlideIn">
+                            <h3 class="text-xl font-playfair font-bold mb-4">Reservation Policy</h3>
+                            <ul class="space-y-4 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-clock text-spice-red mt-1 mr-3"></i>
+                                    <p>Reservations can be made up to 30 days in advance</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-user-clock text-spice-red mt-1 mr-3"></i>
+                                    <p>Please arrive within 15 minutes of your reservation time</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-users text-spice-red mt-1 mr-3"></i>
+                                    <p>For groups larger than 8, please contact us directly</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-bell text-spice-red mt-1 mr-3"></i>
+                                    <p>Cancellations should be made at least 24 hours in advance</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-spice-red text-white p-8 rounded-lg shadow-lg animate-fadeSlideIn">
+                            <h3 class="text-xl font-playfair font-bold mb-4">Need Help?</h3>
+                            <p class="mb-4">For special arrangements or assistance, please don't hesitate to contact us</p>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone-alt mr-3"></i>
+                                <span>(555) 123-4567</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">Spice Haven</h3>
+                    <p class="text-gray-400">Authentic Indian Cuisine</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="booking.html" class="text-gray-400 hover:text-white transition-colors">Reservations</a></li>
+                        <li><a href="order.html" class="text-gray-400 hover:text-white transition-colors">Order Online</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>123 Spice Street</li>
+                        <li><i class="fas fa-phone mr-2"></i>(555) 123-4567</li>
+                        <li><i class="fas fa-envelope mr-2"></i>info@spicehaven.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Spice Haven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 shadow-xl max-w-md w-full text-center animate-popIn">
+            <h2 class="text-2xl font-playfair font-bold text-spice-red mb-4">Reservation Confirmed!</h2>
+            <p class="text-gray-700 mb-6">Thank you for booking with Spice Haven. We look forward to serving you!</p>
+            <button onclick="closeModal()" class="bg-spice-red hover:bg-red-700 text-white px-6 py-2 rounded-lg transition">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('bookingForm');
+        const modal = document.getElementById('confirmationModal');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            modal.classList.remove('hidden');
+            form.reset();
+        });
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

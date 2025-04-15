@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Haven - Authentic Indian Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .font-playfair {
+      font-family: 'Playfair Display', serif;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .zoom-in {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.6s ease-out;
+    }
+
+    .zoom-in.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+    <script>
+        
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'spice-red': '#D94E47',
+                        'spice-orange': '#FF7F3F',
+                        'spice-yellow': '#FFC54D',
+                        'curry-brown': '#8B4513',
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 2s ease-out forwards',
+                        'bounce-in': 'bounceIn 2s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'slide-in-left': 'slideInLeft 2s ease-out forwards',
+                        'slide-in-right': 'slideInRight 2s ease-out forwards',
+                        'slide-in-up': 'slideInUp 2s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        bounceIn: {
+                            '0%': { transform: 'scale(0.9)', opacity: '0' },
+                            '60%': { transform: 'scale(1.05)', opacity: '1' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        slideInLeft: {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        slideInRight: {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        slideInUp: {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Navigation (Same as index.html) -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-playfair font-bold text-spice-red">Spice Haven</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-spice-red transition-colors">Home</a>
+                    <a href="menu.html" class="text-gray-800 hover:text-spice-red transition-colors">Menu</a>
+                    <a href="booking.html" class="text-gray-800 hover:text-spice-red transition-colors">Book Table</a>
+                    <a href="order.html" class="text-gray-800 hover:text-spice-red transition-colors">Order Online</a>
+                    <a href="media.html" class="text-gray-800 hover:text-spice-red transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-spice-red transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-800">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section with Video Background -->
+    <div class="relative h-screen">
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline>
+            <source src="https://videos.pexels.com/video-files/5705978/5705978-hd_1080_1920_30fps.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative h-full flex items-center justify-center text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-playfair font-bold text-white mb-6 animate-fade-up">
+                    Experience the Magic of <br>
+                    <span class="text-spice-yellow">Indian Cuisine</span>
+                </h1>
+                <p class="text-xl text-white mb-8 animate-fade-up delay-300">
+                    A journey through authentic flavors and traditional spices
+                </p>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <a href="booking.html" target="_blank" rel="noopener" class="bg-spice-red hover:bg-red-700 text-white px-8 py-3 rounded-full transition-colors animate-bounce-in">
+                        Book a Table
+                    </a>
+                    <a href="menu.html" target="_blank" rel="noopener" class="bg-white hover:bg-gray-100 text-spice-red px-8 py-3 rounded-full transition-colors animate-bounce-in">
+                        View Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Dishes Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-12 animate-dish delay-0 anim">
+                Our Signature Dishes
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dish 1 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="https://carveyourcraving.com/wp-content/uploads/2021/10/paneer-tikka-skewers.jpg"
+                         alt="Paneer Tikka" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity.jpeg">
+                        <div class="absolute bottom-0 p-6">
+                            <h3 class="text-xl font-playfair font-bold text-white mb-2 animate-dish delay-1">Paneer Tikka</h3>
+                            <p class="text-white/80">Marinated paneer cubes grilled in tandoor, served with mint chutney</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 2 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="https://aartimadan.com/wp-content/uploads/2023/04/Mango-Mastani.jpg" 
+                         alt="Mango Mastani" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute bottom-0 p-6">
+                            <h3 class="text-xl font-playfair font-bold text-white mb-2 animate-dish delay-2">Mango Mastani</h3>
+                            <p class="text-white/80">Thick mango milkshake topped with ice cream, dry fruits, and cherries.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 3 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="https://static.wixstatic.com/media/91e241_0cf76aa5613b4055be2f922f71edeaa0~mv2.jpg/v1/fill/w_560,h_372,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ustaadi%20Hyderabadi%20Veg%20Biryani.jpg" 
+                         alt="Veg Biryani" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute bottom-0 p-6">
+                            <h3 class="text-xl font-playfair font-bold text-white mb-2 animate-dish delay-3">Veg Biryani</h3>
+                            <p class="text-white/80">Aromatic basmati rice layered with spiced veggies and herbs, served with raita.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<section id="spice-journey" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-playfair font-bold text-center mb-12 fade-in-up">Our Spice Journey</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+      <!-- Text Column -->
+      <div class="space-y-6 fade-in-up">
+        <h3 class="text-2xl font-playfair font-bold text-red-600">The Art of Indian Spices</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Every dish at Spice Haven is a carefully crafted symphony of flavors, where traditional spices meet contemporary culinary techniques. Our chefs source the finest ingredients and blend spices fresh daily to ensure an authentic Indian dining experience.
+        </p>
+        <div class="flex gap-4 mt-6">
+          <div class="text-center zoom-in">
+            <i class="fas fa-mortar-pestle text-4xl text-orange-500"></i>
+            <p class="text-sm mt-2">Fresh Ground</p>
+          </div>
+          <div class="text-center zoom-in">
+            <i class="fas fa-pepper-hot text-4xl text-red-600"></i>
+            <p class="text-sm mt-2">Hand Picked</p>
+          </div>
+          <div class="text-center zoom-in">
+            <i class="fas fa-leaf text-4xl text-yellow-500"></i>
+            <p class="text-sm mt-2">Organic</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="relative zoom-in">
+        <img src="https://images.pexels.com/photos/2802527/pexels-photo-2802527.jpeg" alt="Indian Spices" class="rounded-lg shadow-xl">
+        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
+          <p class="text-red-600 font-bold">20+ Unique Spices</p>
+          <p class="text-sm text-gray-600">In Every Authentic Dish</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <!-- Call to Action -->
+    <section class="py-20 bg-curry-brown text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-6">
+                Experience the Taste of India
+            </h2>
+            <p class="text-xl mb-8">Book your table now and embark on a culinary journey</p>
+            <a href="booking.html" 
+               class="inline-block bg-spice-yellow hover:bg-yellow-500 text-curry-brown font-bold px-8 py-3 rounded-full transition-colors">
+                Reserve Your Table
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">Spice Haven</h3>
+                    <p class="text-gray-400">Authentic Indian Cuisine</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="booking.html" class="text-gray-400 hover:text-white transition-colors">Reservations</a></li>
+                        <li><a href="order.html" class="text-gray-400 hover:text-white transition-colors">Order Online</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>123 Spice Street</li>
+                        <li><i class="fas fa-phone mr-2"></i>(555) 123-4567</li>
+                        <li><i class="fas fa-envelope mr-2"></i>info@spicehaven.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Spice Haven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    
+    <!-- Scroll Animation Script -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show');
+      }
+    });
+  }, {
+    threshold: 0.2,
+  });
+
+  document.querySelectorAll('.fade-in-up, .zoom-in').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+</body>
+<style>
+    @keyframes floatSpice {
+        0% {
+            transform: translateY(0) scale(1);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-200px) scale(1.2);
+            opacity: 0;
+        }
+    }
+
+    .spice-icon {
+        position: absolute;
+        color: rgba(255, 255, 255, 0.3);
+        animation: floatSpice 8s ease-in-out infinite;
+        font-size: 1.25rem;
+    }
+
+    .spice-icon:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+    }
+
+    .spice-icon:nth-child(2) {
+        left: 30%;
+        animation-delay: 2s;
+    }
+
+    .spice-icon:nth-child(3) {
+        left: 50%;
+        animation-delay: 4s;
+    }
+
+    .spice-icon:nth-child(4) {
+        left: 70%;
+        animation-delay: 1s;
+    }
+
+    .spice-icon:nth-child(5) {
+        left: 90%;
+        animation-delay: 3s;
+    }
+</style>
+
+</html>

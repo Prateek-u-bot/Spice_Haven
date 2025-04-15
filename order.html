@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Online - Spice Haven Indian Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'spice-red': '#D94E47',
+                        'spice-orange': '#FF7F3F',
+                        'spice-yellow': '#FFC54D',
+                        'curry-brown': '#8B4513',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-playfair font-bold text-spice-red">Spice Haven</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-spice-red transition-colors">Home</a>
+                    <a href="menu.html" class="text-gray-800 hover:text-spice-red transition-colors">Menu</a>
+                    <a href="booking.html" class="text-gray-800 hover:text-spice-red transition-colors">Book Table</a>
+                    <a href="order.html" class="text-spice-red">Order Online</a>
+                    <a href="media.html" class="text-gray-800 hover:text-spice-red transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-spice-red transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-800">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Order Header -->
+    <div class="pt-24 pb-12 bg-curry-brown text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-playfair font-bold mb-4">Order Online</h1>
+            <p class="text-lg text-spice-yellow">Delicious Indian cuisine delivered to your doorstep</p>
+        </div>
+    </div>
+
+    <!-- Main Order Section -->
+    <div class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Menu Items -->
+                <div class="lg:col-span-2">
+                    <!-- Categories -->
+                    <div class="mb-8 flex flex-wrap gap-4">
+                        <button class="category-btn active px-6 py-2 rounded-full bg-spice-red text-white hover:bg-red-700 transition-colors" data-category="all">
+                            All
+                        </button>
+                        <button class="category-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors" data-category="starters">
+                            Starters
+                        </button>
+                        <button class="category-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors" data-category="main-course">
+                            Main Course
+                        </button>
+                        <button class="category-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors" data-category="deserts">
+                            Deserts
+                        </button>
+                        <button class="category-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors" data-category="drinks">
+                            Drinks
+                        </button>
+                    </div>
+
+                    <!-- Menu Items Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Starter Item1 -->
+                        <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden" data-category="starters">
+                            <img src="https://carveyourcraving.com/wp-content/uploads/2021/10/paneer-tikka-skewers.jpg" 
+                                 alt="Paneer Tikka" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-bold">Paneer Tikka</h3>
+                                    <span class="text-spice-red font-bold">₹240</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">Marinated paneer cubes grilled in tandoor, served with mint chutney</p>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        <button class="quantity-btn minus bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                        <input type="number" value="0" min="0" class="w-12 text-center border-y border-gray-200 py-1">
+                                        <button class="quantity-btn plus bg-gray-200 px-3 py-1 rounded-r">+</button>
+                                    </div>
+                                    <button class="add-to-cart bg-spice-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Starter Item2 -->
+                        <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden" data-category="starters">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/027/536/411/small/delicious-french-fries-on-a-white-background-photo.jpg" 
+                                 alt="French Fries" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-bold">French Fries</h3>
+                                    <span class="text-spice-red font-bold">₹120</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">Deep-frying thin strips of potato, typically seasoned with salt.</p>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        <button class="quantity-btn minus bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                        <input type="number" value="0" min="0" class="w-12 text-center border-y border-gray-200 py-1">
+                                        <button class="quantity-btn plus bg-gray-200 px-3 py-1 rounded-r">+</button>
+                                    </div>
+                                    <button class="add-to-cart bg-spice-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Starter Item3 -->
+                        <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden" data-category="starters">
+                            <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2024/04/white-sauce-pasta-recipe.jpg" 
+                                 alt="WhiteSauce Pasta" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-bold">WhiteSauce Pasta </h3>
+                                    <span class="text-spice-red font-bold">₹100</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">Creamy pasta in rich Alfredo-style white sauce with sautéed veggies, herbs & cheese.</p>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        <button class="quantity-btn minus bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                        <input type="number" value="0" min="0" class="w-12 text-center border-y border-gray-200 py-1">
+                                        <button class="quantity-btn plus bg-gray-200 px-3 py-1 rounded-r">+</button>
+                                    </div>
+                                    <button class="add-to-cart bg-spice-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Course Item1 -->
+                        <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden" data-category="main-course">
+                            <img src="https://static.wixstatic.com/media/91e241_0cf76aa5613b4055be2f922f71edeaa0~mv2.jpg/v1/fill/w_560,h_372,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ustaadi%20Hyderabadi%20Veg%20Biryani.jpg" 
+                                 alt="Veg Biryani" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-bold">Veg Biryani</h3>
+                                    <span class="text-spice-red font-bold">₹230</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">Aromatic basmati rice layered with spiced veggies and herbs, served with raita.</p>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        <button class="quantity-btn minus bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                        <input type="number" value="0" min="0" class="w-12 text-center border-y border-gray-200 py-1">
+                                        <button class="quantity-btn plus bg-gray-200 px-3 py-1 rounded-r">+</button>
+                                    </div>
+                                    <button class="add-to-cart bg-spice-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Main Course Item2 -->
+                        <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden" data-category="main-course">
+                            <img src="https://vegecravings.com/wp-content/uploads/2017/04/paneer-butter-masala-recipe-step-by-step-instructions.jpg" 
+                                 alt="Butter Paneer Masala" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-bold">Butter Paneer Masala</h3>
+                                    <span class="text-spice-red font-bold">₹210</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">Soft paneer cubes cooked in a rich, buttery tomato-cream gravy with aromatic spices.</p>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        <button class="quantity-btn minus bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                        <input type="number" value="0" min="0" class="w-12 text-center border-y border-gray-200 py-1">
+                                        <button class="quantity-btn plus bg-gray-200 px-3 py-1 rounded-r">+</button>
+                                    </div>
+                                    <button class="add-to-cart bg-spice-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Main Course Item3 -->
+                        <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden" data-category="main-course">
+                            <img src="https://foodess.com/wp-content/uploads/2023/02/Butter-Naan-3.jpg" 
+                                 alt="Tandoori Naan" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-bold">Tandoori Naan</h3>
+                                    <span class="text-spice-red font-bold">₹40</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">Soft, clay oven-baked Indian flatbread brushed with butter.</p>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        <button class="quantity-btn minus bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                        <input type="number" value="0" min="0" class="w-12 text-center border-y border-gray-200 py-1">
+                                        <button class="quantity-btn plus bg-gray-200 px-3 py-1 rounded-r">+</button>
+                                    </div>
+                                    <button class="add-to-cart bg-spice-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Desert Item1 -->
+                        <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden" data-category="deserts">
+                            <img src="https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg" 
+                                 alt="Chocolate Lava Cake" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-bold">Chocolate Lava Cake</h3>
+                                    <span class="text-spice-red font-bold">₹100</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">Warm chocolate cake with molten center</p>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        <button class="quantity-btn minus bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                        <input type="number" value="0" min="0" class="w-12 text-center border-y border-gray-200 py-1">
+                                        <button class="quantity-btn plus bg-gray-200 px-3 py-1 rounded-r">+</button>
+                                    </div>
+                                    <button class="add-to-cart bg-spice-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Desert Item2 -->
+                        <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden" data-category="deserts">
+                            <img src="https://c2.staticflickr.com/6/5559/30562381266_8994c463dd_z.jpg" 
+                                 alt="Gulab Jamun(2 piece)" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-bold">Gulab Jamun(2 piece)</h3>
+                                    <span class="text-spice-red font-bold">₹90</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">Deep-fried khoya balls soaked in warm saffron cardamom syrup.</p>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        <button class="quantity-btn minus bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                        <input type="number" value="0" min="0" class="w-12 text-center border-y border-gray-200 py-1">
+                                        <button class="quantity-btn plus bg-gray-200 px-3 py-1 rounded-r">+</button>
+                                    </div>
+                                    <button class="add-to-cart bg-spice-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Drink Item1 -->
+                        <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden" data-category="drinks">
+                            <img src="https://aartimadan.com/wp-content/uploads/2023/04/Mango-Mastani.jpg" 
+                                 alt="Mango Mastani" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-bold">Mango Mastani</h3>
+                                    <span class="text-spice-red font-bold">₹130</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">Thick mango milkshake topped with ice cream, dry fruits, and cherries.</p>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        <button class="quantity-btn minus bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                        <input type="number" value="0" min="0" class="w-12 text-center border-y border-gray-200 py-1">
+                                        <button class="quantity-btn plus bg-gray-200 px-3 py-1 rounded-r">+</button>
+                                    </div>
+                                    <button class="add-to-cart bg-spice-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Drink Item2 -->
+                        <div class="menu-item bg-white rounded-lg shadow-md overflow-hidden" data-category="drinks">
+                            <img src="https://www.shutterstock.com/image-photo/blue-lagoon-mojitoa-mocktail-drink-600nw-2470338089.jpg" 
+                                 alt="Blue Lagoon Mocktail" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-bold">Blue Lagoon Mocktail</h3>
+                                    <span class="text-spice-red font-bold">₹110</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">Lemon soda with tangy blue curacao flavor.</p>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        <button class="quantity-btn minus bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                        <input type="number" value="0" min="0" class="w-12 text-center border-y border-gray-200 py-1">
+                                        <button class="quantity-btn plus bg-gray-200 px-3 py-1 rounded-r">+</button>
+                                    </div>
+                                    <button class="add-to-cart bg-spice-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Cart Section -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                        <h2 class="text-2xl font-playfair font-bold mb-6">Your Order</h2>
+                        <div id="cart-items" class="space-y-4 mb-6">
+                            <!-- Cart items will be dynamically added here -->
+                            <div class="text-gray-500 text-center">Your cart is empty</div>
+                        </div>
+                        <div class="border-t pt-4">
+                            <div class="flex justify-between mb-2">
+                                <span>Subtotal</span>
+                                <span id="subtotal">₹0.00</span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span>Delivery Fee</span>
+                                <span>₹50</span>
+                            </div>
+                            <div class="flex justify-between font-bold text-lg">
+                                <span>Total</span>
+                                <span id="total">₹0.00</span>
+                            </div>
+                        </div>
+                        <button id="checkout-btn" 
+                                class="w-full bg-spice-red text-white py-3 rounded-lg mt-6 hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                disabled>
+                            Proceed to Checkout
+                        </button>
+                        <p class="text-sm text-gray-500 mt-4 text-center">
+                            Minimum order value: ₹500
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delivery Information -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <i class="fas fa-clock text-4xl text-spice-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Delivery Time</h3>
+                    <p class="text-gray-600">30-45 minutes</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-map-marker-alt text-4xl text-spice-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Delivery Area</h3>
+                    <p class="text-gray-600">Within 5 miles radius</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-credit-card text-4xl text-spice-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Payment Methods</h3>
+                    <p class="text-gray-600">Card, Cash on Delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">Spice Haven</h3>
+                    <p class="text-gray-400">Authentic Indian Cuisine</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="booking.html" class="text-gray-400 hover:text-white transition-colors">Reservations</a></li>
+                        <li><a href="order.html" class="text-gray-400 hover:text-white transition-colors">Order Online</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>123 Spice Street</li>
+                        <li><i class="fas fa-phone mr-2"></i>(555) 123-4567</li>
+                        <li><i class="fas fa-envelope mr-2"></i>info@spicehaven.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Spice Haven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cart functionality
+            let cart = [];
+            const cartItems = document.getElementById('cart-items');
+            const subtotalElement = document.getElementById('subtotal');
+            const totalElement = document.getElementById('total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            // Add to cart functionality
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const menuItem = this.closest('.menu-item');
+                    const quantity = parseInt(menuItem.querySelector('input[type="number"]').value);
+                    
+                    if (quantity > 0) {
+                        const name = menuItem.querySelector('h3').textContent;
+                        const price = parseFloat(menuItem.querySelector('.text-spice-red').textContent.replace('₹', '').replace(',',''));
+                        
+                        addToCart({
+                            name,
+                            price,
+                            quantity
+                        });
+
+                        // Reset quantity
+                        menuItem.querySelector('input[type="number"]').value = 0;
+                    }
+                });
+            });
+
+            // Quantity buttons
+            document.querySelectorAll('.quantity-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('input');
+                    const currentValue = parseInt(input.value);
+                    
+                    if (this.classList.contains('plus')) {
+                        input.value = currentValue + 1;
+                    } else if (this.classList.contains('minus') && currentValue > 0) {
+                        input.value = currentValue - 1;
+                    }
+                });
+            });
+
+            function addToCart(item) {
+                cart.push(item);
+                updateCart();
+            }
+
+            function updateCart() {
+                if (cart.length === 0) {
+                    cartItems.innerHTML = '<div class="text-gray-500 text-center">Your cart is empty</div>';
+                    checkoutBtn.disabled = true;
+                } else {
+                    cartItems.innerHTML = cart.map(item => `
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold">${item.name}</h4>
+                                <p class="text-sm text-gray-500">Quantity: ${item.quantity}</p>
+                            </div>
+                            <span>₹${(item.price * item.quantity).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span>
+
+                        </div>
+                    `).join('');
+
+                    const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                    const deliveryFee = 50.00;
+                    const total = subtotal + deliveryFee;
+
+                    subtotalElement.textContent = `₹${subtotal.toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
+                    totalElement.textContent = `₹${total.toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
+
+                    
+                    checkoutBtn.disabled = subtotal < 500;
+                }
+            }
+
+            // Category filtering
+            document.querySelectorAll('.category-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    document.querySelectorAll('.category-btn').forEach(btn => {
+                        btn.classList.remove('bg-spice-red', 'text-white');
+                        btn.classList.add('bg-gray-200', 'text-gray-800');
+                    });
+                    button.classList.remove('bg-gray-200', 'text-gray-800');
+                    button.classList.add('bg-spice-red', 'text-white');
+
+                    // Filter menu items
+                    const category = button.dataset.category;
+                    document.querySelectorAll('.menu-item').forEach(item => {
+                        if (category === 'all' || item.dataset.category === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Checkout button
+            checkoutBtn.addEventListener('click', function() {
+                alert('Thank you for your order! We will confirm it shortly.');
+                cart = [];
+                updateCart();
+            });
+        });
+    </script>
+</body>
+</html>

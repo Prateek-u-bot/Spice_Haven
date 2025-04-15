@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Spice Haven Indian Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'spice-red': '#D94E47',
+                        'spice-orange': '#FF7F3F',
+                        'spice-yellow': '#FFC54D',
+                        'curry-brown': '#8B4513',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Navigation (Same as index.html) -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-playfair font-bold text-spice-red">Spice Haven</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-spice-red transition-colors">Home</a>
+                    <a href="menu.html" class="text-spice-red">Menu</a>
+                    <a href="booking.html" class="text-gray-800 hover:text-spice-red transition-colors">Book Table</a>
+                    <a href="order.html" class="text-gray-800 hover:text-spice-red transition-colors">Order Online</a>
+                    <a href="media.html" class="text-gray-800 hover:text-spice-red transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-spice-red transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-800">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <div class="pt-24 pb-12 bg-curry-brown text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-playfair font-bold mb-4">Our Menu</h1>
+            <p class="text-lg text-spice-yellow">Discover the authentic flavors of India</p>
+        </div>
+    </div>
+
+    <!-- Menu Categories -->
+    <div class="bg-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="category-btn active px-6 py-2 rounded-full bg-spice-red text-white hover:bg-red-700 transition-colors" data-category="all">
+                    All
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors" data-category="starters">
+                    Starters
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors" data-category="main-course">
+                    Main Course
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors" data-category="deserts">
+                    Desert
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors" data-category="drinks">
+                    Drinks
+                </button>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Starter1 -->
+                <div class="menu-item group" data-category="starters">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://carveyourcraving.com/wp-content/uploads/2021/10/paneer-tikka-skewers.jpg" 
+                             alt="Paneer Tikka" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <span class="bg-spice-yellow text-curry-brown text-sm font-bold px-3 py-1 rounded-full">Vegetarian</span>
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Paneer Tikka</h3>
+                                <p class="text-white/80 mt-2">Marinated paneer cubes grilled in tandoor, served with mint chutney</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹240</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Starter2 -->
+                <div class="menu-item group" data-category="starters">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/027/536/411/small/delicious-french-fries-on-a-white-background-photo.jpg" 
+                             alt="French Fries" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <span class="bg-spice-yellow text-curry-brown text-sm font-bold px-3 py-1 rounded-full">Vegetarian</span>
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">French Fries</h3>
+                                <p class="text-white/80 mt-2">Deep-frying thin strips of potato, typically seasoned with salt.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹120</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Starter3 -->
+                <div class="menu-item group" data-category="starters">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://hotelbeachgarden.com/wp-content/uploads/2024/12/Corn-Cheese-balls.webp" 
+                             alt="Corn & Cheese Balls" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <span class="bg-spice-yellow text-curry-brown text-sm font-bold px-3 py-1 rounded-full">Vegetarian</span>
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Corn & Cheese Balls</h3>
+                                <p class="text-white/80 mt-2">Deep-fried balls with melty cheese and sweet corn inside.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹150</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Starter4 -->
+                <div class="menu-item group" data-category="starters">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2024/04/white-sauce-pasta-recipe.jpg" 
+                             alt="WhiteSauce Pasta" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <span class="bg-spice-yellow text-curry-brown text-sm font-bold px-3 py-1 rounded-full">Vegetarian</span>
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">WhiteSauce Pasta</h3>
+                                <p class="text-white/80 mt-2">Creamy pasta in rich Alfredo-style white sauce with sautéed veggies, herbs & cheese.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹100</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Course1 -->
+                <div class="menu-item group" data-category="main-course">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://static.wixstatic.com/media/91e241_0cf76aa5613b4055be2f922f71edeaa0~mv2.jpg/v1/fill/w_560,h_372,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ustaadi%20Hyderabadi%20Veg%20Biryani.jpg" 
+                             alt="Veg Biryani" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <span class="bg-spice-yellow text-curry-brown text-sm font-bold px-3 py-1 rounded-full">Vegetarian</span>
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Veg Biryani</h3>
+                                <p class="text-white/80 mt-2">Aromatic basmati rice layered with spiced veggies and herbs, served with raita.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹230</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Course2 -->
+                <div class="menu-item group" data-category="main-course">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://vegecravings.com/wp-content/uploads/2017/04/paneer-butter-masala-recipe-step-by-step-instructions.jpg" 
+                             alt="Butter Paneer Masala" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <span class="bg-spice-yellow text-curry-brown text-sm font-bold px-3 py-1 rounded-full">Vegetarian</span>
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Butter Paneer Masala</h3>
+                                <p class="text-white/80 mt-2">Soft paneer cubes cooked in a rich, buttery tomato-cream gravy with aromatic spices.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹210</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Course3 -->
+                <div class="menu-item group" data-category="main-course">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://foodess.com/wp-content/uploads/2023/02/Butter-Naan-3.jpg" 
+                             alt="Tandoori Naan" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <span class="bg-spice-yellow text-curry-brown text-sm font-bold px-3 py-1 rounded-full">Vegetarian</span>
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Tandoori Naan</h3>
+                                <p class="text-white/80 mt-2">Soft, clay oven-baked Indian flatbread brushed with butter.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹40</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Course4 -->
+                <div class="menu-item group" data-category="main-course">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://static.toiimg.com/thumb/52416693.cms?width=1200&height=900" 
+                             alt="Pav Bhaji" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <span class="bg-spice-yellow text-curry-brown text-sm font-bold px-3 py-1 rounded-full">Vegetarian</span>
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Pav Bhaji</h3>
+                                <p class="text-white/80 mt-2">Thick mashed vegetable curry served with buttered pav—Mumbai’s street love</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹180</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Course5 -->
+                <div class="menu-item group" data-category="main-course">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://dinedelicious.in/wp-content/uploads/2021/03/Punjabi-Chole-Recipe-12.jpg" 
+                             alt="Chole Masala" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <span class="bg-spice-yellow text-curry-brown text-sm font-bold px-3 py-1 rounded-full">Vegetarian</span>
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Chole Masala</h3>
+                                <p class="text-white/80 mt-2">Spiced chickpea curry cooked in a rich, tangy tomato-onion gravy.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹160</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Course4 -->
+                <div class="menu-item group" data-category="main-course">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://i0.wp.com/binjalsvegkitchen.com/wp-content/uploads/2015/12/Masala-Dosa-H1-1.jpg?fit=600%2C900&ssl=1" 
+                             alt="Masala Dosa" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <span class="bg-spice-yellow text-curry-brown text-sm font-bold px-3 py-1 rounded-full">Vegetarian</span>
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Masala Dosa</h3>
+                                <p class="text-white/80 mt-2">Crispy South Indian rice crepe filled with spiced potato masala, served with chutney & sambar.
+
+</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹130</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desert1 -->
+                <div class="menu-item group" data-category="deserts">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg" 
+                             alt="Chocolate Lava Cake" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Chocolate Lava Cake</h3>
+                                <p class="text-white/80 mt-2">Warm chocolate cake with molten center</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹100</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Desert2 -->
+                <div class="menu-item group" data-category="deserts">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://c2.staticflickr.com/6/5559/30562381266_8994c463dd_z.jpg" 
+                             alt="Gulab Jamun" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Gulab Jamun</h3>
+                                <p class="text-white/80 mt-2">Deep-fried khoya balls soaked in warm saffron cardamom syrup.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹90</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Desert3 -->
+                <div class="menu-item group" data-category="deserts">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://ammaspastries.in/wp-content/uploads/2023/08/Mango-Mouuse-Pcs-scaled.webp" 
+                             alt="Mango Mousse Cake" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Mango Mousse Cake</h3>
+                                <p class="text-white/80 mt-2">Seasonal mango puree layered in sponge with airy mousse texture.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹150</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Desert4 -->
+                <div class="menu-item group" data-category="deserts">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://www.rotinrice.com/wp-content/uploads/2013/06/StrawberryIceCream-1-500x375.jpg" 
+                             alt="Strawberry Swirl Ice-cream" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Strawberry Swirl Ice-cream</h3>
+                                <p class="text-white/80 mt-2">Sweet & tangy strawberry blend with fresh pulp.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹75</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drink1 -->
+                <div class="menu-item group" data-category="drinks">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg" 
+                             alt="Cappuccino" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Cappuccino</h3>
+                                <p class="text-white/80 mt-2">Espresso with steamed milk foam</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹110</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Drink2 -->
+                <div class="menu-item group" data-category="drinks">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://media.istockphoto.com/id/1663243768/photo/mocha-creamy-delight-with-ice-cream-and-chocolate-chip-and-coffee-beans-served-in-glass.jpg?s=612x612&w=0&k=20&c=tYUgHxuFBPZ97YkGxs6I3u-8fxf3UGXeIoDGB2iy-t0=" 
+                             alt="Cold Coffee with Ice Cream" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Cold Coffee with Ice Cream</h3>
+                                <p class="text-white/80 mt-2">Strong, chilled coffee blended smooth and topped with vanilla.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹130</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Drink3 -->
+                <div class="menu-item group" data-category="drinks">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://cdn.loveandlemons.com/wp-content/uploads/2020/07/mojito-recipe.jpg" 
+                             alt="Mint Mojito" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Mint Mojito</h3>
+                                <p class="text-white/80 mt-2">Lime, mint, and soda—super refreshing!</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹100</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Drink4 -->
+                <div class="menu-item group" data-category="drinks">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://www.shutterstock.com/image-photo/blue-lagoon-mojitoa-mocktail-drink-600nw-2470338089.jpg" 
+                             alt="Blue Lagoon Mocktail" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Blue Lagoon Mocktail</h3>
+                                <p class="text-white/80 mt-2">Lemon soda with tangy blue curacao flavor.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹110</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Drink4 -->
+                <div class="menu-item group" data-category="drinks">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://aartimadan.com/wp-content/uploads/2023/04/Mango-Mastani.jpg" 
+                             alt="Mango Mastani" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-0 p-6">
+                                <h3 class="text-xl font-playfair font-bold text-white mt-2">Mango Mastani</h3>
+                                <p class="text-white/80 mt-2">Thick mango milkshake topped with ice cream, dry fruits, and cherries.</p>
+                                <p class="text-spice-yellow font-bold mt-2">₹130</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Dietary Information -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-playfair font-bold text-center mb-8">Dietary Information</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <div class="text-center">
+                    <i class="fas fa-leaf text-green-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Vegetarian Options</h3>
+                    <p class="text-gray-600">Wide selection of vegetarian dishes</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-leaf text-green-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Vegan Friendly</h3>
+                    <p class="text-gray-600">Dairy-free alternatives available</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-leaf text-green-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Gluten Free</h3>
+                    <p class="text-gray-600">Gluten-free options on request</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">Spice Haven</h3>
+                    <p class="text-gray-400">Authentic Indian Cuisine</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="booking.html" class="text-gray-400 hover:text-white transition-colors">Reservations</a></li>
+                        <li><a href="order.html" class="text-gray-400 hover:text-white transition-colors">Order Online</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>123 Spice Street</li>
+                        <li><i class="fas fa-phone mr-2"></i>(555) 123-4567</li>
+                        <li><i class="fas fa-envelope mr-2"></i>info@spicehaven.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Spice Haven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Menu filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const menuItems = document.querySelectorAll('.menu-item');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    categoryButtons.forEach(btn => {
+                        btn.classList.remove('bg-spice-red', 'text-white');
+                        btn.classList.add('bg-gray-200', 'text-gray-800');
+                    });
+                    button.classList.remove('bg-gray-200', 'text-gray-800');
+                    button.classList.add('bg-spice-red', 'text-white');
+
+                    // Filter menu items
+                    const category = button.dataset.category;
+                    menuItems.forEach(item => {
+                        if (category === 'all' || item.dataset.category === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
