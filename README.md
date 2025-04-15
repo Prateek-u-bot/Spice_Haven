@@ -6,19 +6,19 @@ This project delivers a website for "Spice Haven," an Indian restaurant, designe
 
 The site highlights the restaurant's ambiance and menu, emphasizing authentic Indian cuisine. It aims to attract customers through visual appeal and easy navigation. Key sections include:
 
-* **Home:** Immersive video background and call to action.
-* **Menu:** Display of signature dishes.
-* **Spice Journey:** Information about spice quality.
-* **Booking/Order:** Reservation and online ordering functionalities.
-* **Gallery:** Media showcase
-* **Contact:** Restaurant details
+* *Home:* Immersive video background and call to action.
+* *Menu:* Display of signature dishes.
+* *Spice Journey:* Information about spice quality.
+* *Booking/Order:* Reservation and online ordering functionalities.
+* *Gallery:* Media showcase
+* *Contact:* Restaurant details
 
 ## Setup Instructions
 
 1.  Clone the repository:
-    `https://github.com/Prateek-u-bot/Spice_haven`  
-2.  Open `index.html` in a browser.
-3.  Preview Link : `https://spice-haven-rouge.vercel.app/`
+    https://github.com/Prateek-u-bot/Spice_haven  
+2.  Open index.html in a browser.
+3.  Preview Link : https://spice-haven-rouge.vercel.app/
 
 ## Usage Details
 
@@ -35,7 +35,7 @@ The site highlights the restaurant's ambiance and menu, emphasizing authentic In
 
 ## Team Members
 
-* **Prateek Chaubey:** Project Lead & Front-End Developer - Responsible for overall project management and front-end development using HTML, Tailwind CSS, and JavaScript.
-* **Parag Dixit:** UI/UX Designer - Responsible for designing the user interface and user experience, ensuring a visually appealing and intuitive website.
-* **Bhoomika Jain:** Content Creator - Responsible for creating and managing website content, including dish descriptions, restaurant information, and blog posts.
-* **Jahnvi Nayak:** Front-End Developer - Assisted in the front-end development, focusing on responsive design and interactive elements.
+* *Prateek Chaubey:* Project Lead & Front-End Developer - Responsible for overall project management and front-end development using HTML, Tailwind CSS, and JavaScript.
+* *Parag Dixit:* UI/UX Designer - Responsible for designing the user interface and user experience, ensuring a visually appealing and intuitive website.
+* *Bhoomika Jain:* Content Creator - Responsible for creating and managing website content, including dish descriptions, restaurant information, and blog posts.
+* *Jahnvi Nayak:* Front-End Developer - Assisted in the front-end development, focusing on responsive design and interactive elements.
