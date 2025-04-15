@@ -16,7 +16,7 @@ The site highlights the restaurant's ambiance and menu, emphasizing authentic In
 ## Setup Instructions
 
 1.  Clone the repository:
-    `git clone https://github.com/your-username/spice-haven.git`  **(Replace with your actual repository URL)**
+    `https://github.com/Prateek-u-bot/Spice_haven`  
 2.  Open `index.html` in a browser.
 
 ## Usage Details
